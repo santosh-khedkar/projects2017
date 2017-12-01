@@ -15,10 +15,10 @@ int tot_exectime(char seq[], int exectime, int cooldown, int tot_task){
 		idx = (int)(seq[i] - 'A');
 		/*time elapsed since last execution of the same task*/
 		time_elapsed = i - 1 - lastexec[idx]; 
-	    if (time_elapsed < cooldown && lastexec[idx] != -1) {
-	    	tot_time = tot_time + cooldown - time_elapsed;
-	    }
-	    tot_time = tot_time + exectime;
+		if (time_elapsed < cooldown && lastexec[idx] != -1) {
+			tot_time = tot_time + cooldown - time_elapsed;
+		}
+		tot_time = tot_time + exectime;
 		lastexec[idx] = i;
 	}
 	return tot_time;
