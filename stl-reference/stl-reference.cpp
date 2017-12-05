@@ -143,7 +143,21 @@ void stl_string(){
 	str3.erase(10,7); /*My name is Santosh%% and i am cool*/
 	str3.erase(str3.begin()+18); /*My name is Santosh% and i am cool*/
 	str3.erase(str3.begin()+18, str3.begin()+19); /*My name is Santosh and i am cool*/
-	cout<<str3<<endl;
+
+	/*replace*/
+
+	/*find*/
+
+	/*compare*/
+
+	/*substring/
+
+	/*swap*/
+	str3.swap(str1);
+
+	/*cstring operation*/
+	char str4[10];
+	strcpy(str4, str1.c_str());
 	/*clears everthing*/
 	str1.clear();
 
