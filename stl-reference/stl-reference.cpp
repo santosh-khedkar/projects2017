@@ -217,8 +217,6 @@ void stl_set(){
 
 	multiset<int> ms (arr, arr + 5);
 
-
-
 }
 
 int main(){
