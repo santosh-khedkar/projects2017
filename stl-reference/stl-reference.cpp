@@ -2,6 +2,15 @@
 #include <array>
 #include <vector>
 #include <string>
+#include <cstring>
+#include <set>
+#include <unordered_set>
+#include <list>
+#include <map>
+#include <unordered_map>
+#include <queue>
+#include <stack>
+#include <deque>
 #include <algorithm>
 
 using namespace std;
@@ -144,22 +153,71 @@ void stl_string(){
 	str3.erase(str3.begin()+18); /*My name is Santosh% and i am cool*/
 	str3.erase(str3.begin()+18, str3.begin()+19); /*My name is Santosh and i am cool*/
 
-	/*replace*/
-
 	/*find*/
+	size_t found = str3.find("Santosh");
+	if (found != string::npos){
+		cout << "found at: "<<found<<endl;
+	} else {
+		cout << "Not found"<<endl;
+	}
+	
 
-	/*compare*/
-
-	/*substring/
-
+	/*substring*/
+	string str5 = str3.substr(11,7); /*Santosh*/
+	size_t pos = str5.find("ant");
+	str5 = str5.substr(pos); /*antosh*/
 	/*swap*/
 	str3.swap(str1);
 
+	/*compare*/
+	str3.compare(str5); //return false;
+
 	/*cstring operation*/
 	char str4[10];
-	strcpy(str4, str1.c_str());
+	strncpy(str4, str1.c_str(), 10);
+
 	/*clears everthing*/
 	str1.clear();
+
+}
+
+void stl_set(){
+	/*set store the values in a specific order (sorted)*/
+	/*declaration*/
+	int arr[] = {12, 82, 37, 64, 15};
+	set<int> s1 (arr, arr + 5);
+
+	/*parsing*/
+	for (auto it = s1.begin(); it != s1.end(); it++)
+		cout << *it << " ";
+	cout <<endl;
+	
+	/*size*/
+	cout <<"size of the set: "<<s1.size()<<endl;
+
+	/*insert*/
+	s1.insert(50); /*12 15 37 50 64 82*/
+
+	/*erase*/
+	s1.erase(50); /*12 15 37 64 82*/
+	set<int>::iterator it = s1.begin();
+	++it;
+	s1.erase(it); /*12 37 50 64 82*/
+
+	/*swap*/
+	set<int> s2 (arr, arr+5);
+	s2.swap(s1); 
+
+	/*find*/
+	it = s1.find(37); // found if (it != s1.end())
+
+	/*Multiset*/
+	/*same as set but it can have repeating value but sorted
+	everything is same as set */
+
+	multiset<int> ms (arr, arr + 5);
+
+
 
 }
 
@@ -167,5 +225,6 @@ int main(){
 	stl_array();
 	stl_vector();
 	stl_string();
+	stl_set();
 	return 0;
 }
